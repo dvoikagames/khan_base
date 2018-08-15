@@ -6,8 +6,8 @@ class mapSprite extends PIXI.Sprite {
     }
 
     updatePosition() {
-        this.x = -($gameMap._displayX * $gameMap.tileWidth()) + this.realX;
-        this.y = -($gameMap._displayY * $gameMap.tileHeight()) + this.realY;
+        this.x = -($gameMap.displayX() * $gameMap.tileWidth()) + this.realX;
+        this.y = -($gameMap.displayY() * $gameMap.tileHeight()) + this.realY;
     }
 
     update() {
@@ -42,8 +42,8 @@ class mapParticleContainer extends PIXI.particles.ParticleContainer {
     }
 
     updatePosition() {
-        this.x = -($gameMap._displayX * $gameMap.tileWidth()) + this.realX;
-        this.y = -($gameMap._displayY * $gameMap.tileHeight()) + this.realY;
+        this.x = -($gameMap.displayX() * $gameMap.tileWidth()) + this.realX;
+        this.y = -($gameMap.displayY() * $gameMap.tileHeight()) + this.realY;
     }
 
     update() {
