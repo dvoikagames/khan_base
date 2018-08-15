@@ -106,6 +106,8 @@ class mapScript {
         this.createExitZones();
 
         $gameSystem.disableMenu();
+        $gamePlayer.locate(34, 60);
+        $gamePlayer.setDirection(8);
 
         this._isReady = ready;
     }
@@ -360,7 +362,7 @@ class mapScript {
         let graphics = new PIXI.Graphics;
         graphics.beginFill(config.color, config.alpha);
 
-        graphics.drawCircle(tileWidth / 2, tileHeight / 2, tileWidth / 4);
+        graphics.drawCircle(tileWidth, tileHeight, tileWidth / 2);
 
         graphics.endFill();
 
@@ -374,6 +376,9 @@ class mapScript {
                     let ydest = ypos * tileHeight;
 
                     let sprite = new PIXI.Sprite(texture);
+                    sprite.width = sprite.width / 2;
+                    sprite.height = sprite.height / 2;
+                    
                     // sprite.position.set(xdest, ydest);
                     sprite.position.set(xdest + sprite.width / 2, ydest + sprite.height / 2);
                     particleContainer.addChild(sprite);
